@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		087F85CF2A714CE600BC1973 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 087F85CE2A714CE600BC1973 /* Swifter */; };
 		087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D02A71518A00BC1973 /* TwitterConstants.swift */; };
+		087F85D32A71F6B800BC1973 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D22A71F6B800BC1973 /* SignupViewController.swift */; };
+		087F85D52A722E2B00BC1973 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D42A722E2A00BC1973 /* LoginViewController.swift */; };
+		087F85D72A724A7300BC1973 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D62A724A7300BC1973 /* TabBarController.swift */; };
+		087F85D92A724B1200BC1973 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D82A724B1200BC1973 /* HomeViewController.swift */; };
+		087F85DB2A724B4800BC1973 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DA2A724B4800BC1973 /* WishlistViewController.swift */; };
+		087F85DD2A724C4000BC1973 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DC2A724C4000BC1973 /* OrderViewController.swift */; };
+		087F85DF2A724C5F00BC1973 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */; };
 		08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE42A709F0200F770AD /* AppDelegate.swift */; };
 		08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE62A709F0300F770AD /* SceneDelegate.swift */; };
 		08922EE92A709F0300F770AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE82A709F0300F770AD /* ViewController.swift */; };
@@ -23,13 +30,20 @@
 		08922F122A70BC2000F770AD /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F092A70BC2000F770AD /* Inter-Thin.ttf */; };
 		08922F132A70BC2000F770AD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */; };
 		08922F142A70BC2000F770AD /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0B2A70BC2000F770AD /* Inter-Light.ttf */; };
-		08922F162A70CA0700F770AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F152A70CA0700F770AD /* LoginViewController.swift */; };
+		08922F162A70CA0700F770AD /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F152A70CA0700F770AD /* GetStartedViewController.swift */; };
 		08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */; };
 		08922F1E2A71005600F770AD /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 08922F1D2A71005600F770AD /* FacebookLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		087F85D02A71518A00BC1973 /* TwitterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterConstants.swift; sourceTree = "<group>"; };
+		087F85D22A71F6B800BC1973 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		087F85D42A722E2A00BC1973 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		087F85D62A724A7300BC1973 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		087F85D82A724B1200BC1973 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		087F85DA2A724B4800BC1973 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		087F85DC2A724C4000BC1973 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
 		08922EE12A709F0200F770AD /* FakeStore(API).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FakeStore(API).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08922EE42A709F0200F770AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08922EE62A709F0300F770AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +60,7 @@
 		08922F092A70BC2000F770AD /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
 		08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		08922F0B2A70BC2000F770AD /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
-		08922F152A70CA0700F770AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		08922F152A70CA0700F770AD /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFacebookViewModels.swift; path = ../../../../../Documents/LoginFacebookViewModels.swift; sourceTree = "<group>"; };
 		08922F1F2A71042200F770AD /* FakeStore(API).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FakeStore(API).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +140,14 @@
 			isa = PBXGroup;
 			children = (
 				08922EE82A709F0300F770AD /* ViewController.swift */,
-				08922F152A70CA0700F770AD /* LoginViewController.swift */,
+				08922F152A70CA0700F770AD /* GetStartedViewController.swift */,
+				087F85D22A71F6B800BC1973 /* SignupViewController.swift */,
+				087F85D42A722E2A00BC1973 /* LoginViewController.swift */,
+				087F85D62A724A7300BC1973 /* TabBarController.swift */,
+				087F85D82A724B1200BC1973 /* HomeViewController.swift */,
+				087F85DA2A724B4800BC1973 /* WishlistViewController.swift */,
+				087F85DC2A724C4000BC1973 /* OrderViewController.swift */,
+				087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,12 +254,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08922F162A70CA0700F770AD /* LoginViewController.swift in Sources */,
+				087F85DF2A724C5F00BC1973 /* MyCardsViewController.swift in Sources */,
+				08922F162A70CA0700F770AD /* GetStartedViewController.swift in Sources */,
+				087F85D32A71F6B800BC1973 /* SignupViewController.swift in Sources */,
+				087F85DB2A724B4800BC1973 /* WishlistViewController.swift in Sources */,
 				08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */,
 				08922EE92A709F0300F770AD /* ViewController.swift in Sources */,
+				087F85D52A722E2B00BC1973 /* LoginViewController.swift in Sources */,
+				087F85D92A724B1200BC1973 /* HomeViewController.swift in Sources */,
+				087F85D72A724A7300BC1973 /* TabBarController.swift in Sources */,
 				08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */,
 				08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */,
 				087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */,
+				087F85DD2A724C4000BC1973 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

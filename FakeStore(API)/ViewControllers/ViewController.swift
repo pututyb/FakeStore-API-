@@ -172,7 +172,7 @@ class ViewController: UIViewController {
     @objc func btnSkipTapped() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        let loginVC = LoginViewController()
+        let loginVC = GetStartedViewController()
         navigationController?.pushViewController(loginVC, animated: true)
         print("Skip Tapped")
     }

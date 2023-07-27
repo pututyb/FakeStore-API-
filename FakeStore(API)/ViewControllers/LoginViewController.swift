@@ -2,18 +2,12 @@
 //  LoginViewController.swift
 //  FakeStore(API)
 //
-//  Created by Putut Yusri Bahtiar on 26/07/23.
+//  Created by Putut Yusri Bahtiar on 27/07/23.
 //
 
 import UIKit
-import FacebookLogin
-import Swifter
-
 
 class LoginViewController: UIViewController {
-    
-    var swifter: Swifter!
-    var accToken: Credential.OAuthAccessToken?
     
     private lazy var btnBack: UIButton = {
         let btnBack = UIButton()
@@ -26,93 +20,173 @@ class LoginViewController: UIViewController {
         return btnBack
     }()
     
-    let txtTitle: UILabel = {
-        let txtTitle = UILabel()
-        txtTitle.translatesAutoresizingMaskIntoConstraints = false
-        txtTitle.text = "Let’s Get Started"
-        txtTitle.numberOfLines = 0
-        txtTitle.textAlignment = .center
-        txtTitle.textColor = UIColor(named: "textPrimaryColor")
-        txtTitle.font = UIFont(name: "Inter-Bold", size: 28)
+    let lblWelcome: UILabel = {
+        let lblWelcome = UILabel()
+        lblWelcome.translatesAutoresizingMaskIntoConstraints = false
+        lblWelcome.text = "Welcome"
+        lblWelcome.numberOfLines = 0
+        lblWelcome.textAlignment = .center
+        lblWelcome.textColor = UIColor(named: "textPrimaryColor")
+        lblWelcome.font = UIFont(name: "Inter-Bold", size: 28)
         
-        return txtTitle
-    }()
-    
-    private lazy var btnFacebook: UIButton = {
-        let btnFacebook = UIButton()
-        btnFacebook.translatesAutoresizingMaskIntoConstraints = false
-        btnFacebook.backgroundColor = UIColor(named: "btnFacebook")
-        btnFacebook.layer.cornerRadius = 10
-        btnFacebook.setImage(UIImage(named: "facebook-logo"), for: .normal)
-        btnFacebook.addTarget(self, action: #selector(loginButtonFacebookClicked), for: .touchUpInside)
-        return btnFacebook
-    }()
-    
-    private lazy var btnTwitter: UIButton = {
-        let btnTwitter = UIButton()
-        btnTwitter.translatesAutoresizingMaskIntoConstraints = false
-        btnTwitter.backgroundColor = UIColor(named: "btnTwitter")
-        btnTwitter.layer.cornerRadius = 10
-        btnTwitter.setImage(UIImage(named: "twitter-logo"), for: .normal)
-        btnTwitter.addTarget(self, action: #selector(loginButtonTwitterClicked), for: .touchUpInside)
-        return btnTwitter
-    }()
-    
-    private lazy var btnGoogle: UIButton = {
-        let btnGoogle = UIButton()
-        btnGoogle.translatesAutoresizingMaskIntoConstraints = false
-        btnGoogle.backgroundColor = UIColor(named: "btnGoogle")
-        btnGoogle.layer.cornerRadius = 10
-        btnGoogle.setImage(UIImage(named: "google-logo"), for: .normal)
-        //        btnBack.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        return btnGoogle
-    }()
-    
-    let lblSignIn: UILabel = {
-        let lblSignIn = UILabel()
-        lblSignIn.translatesAutoresizingMaskIntoConstraints = false
-        lblSignIn.text = "Already have an account?"
-        lblSignIn.numberOfLines = 0
-        lblSignIn.textAlignment = .center
-        lblSignIn.textColor = UIColor(named: "textPrimaryColor")
-        lblSignIn.font = UIFont(name: "Inter-Regular", size: 15)
         
-        return lblSignIn
+        return lblWelcome
     }()
     
-    private lazy var btnSignIn: UIButton = {
-        let btnSignIn = UIButton()
-        btnSignIn.translatesAutoresizingMaskIntoConstraints = false
-        btnSignIn.setTitle("Sign In", for: .normal)
-        btnSignIn.setTitleColor(UIColor(named: "textPrimaryColor"), for: .normal)
-        btnSignIn.titleLabel?.font = UIFont(name: "Inter-Bold", size: 15)
-        btnSignIn.addTarget(self, action: #selector(btnBackTapped), for: .touchUpInside)
-        return btnSignIn
+    let lblDescWelcome: UILabel = {
+        let lblDescWelcome = UILabel()
+        lblDescWelcome.translatesAutoresizingMaskIntoConstraints = false
+        lblDescWelcome.text = "Please enter your data to continue"
+        lblDescWelcome.numberOfLines = 0
+        lblDescWelcome.textAlignment = .center
+        lblDescWelcome.textColor = UIColor(named: "textPrimaryColor")
+        lblDescWelcome.font = UIFont(name: "Inter-Regular", size: 15)
+        
+        return lblDescWelcome
     }()
     
-    private lazy var btnCreateAccount: UIButton = {
-        let btnCreateAccount = UIButton()
-        btnCreateAccount.translatesAutoresizingMaskIntoConstraints = false
-        btnCreateAccount.setTitle("Create an Account", for: .normal)
-        btnCreateAccount.backgroundColor = UIColor(named: "btnOnBoardingTapped")
-        btnCreateAccount.setTitleColor(UIColor(named: "textPrimaryColor"), for: .normal)
-        btnCreateAccount.titleLabel?.font = UIFont(name: "Inter-Regular", size: 17)
-        btnCreateAccount.addTarget(self, action: #selector(btnCreateAccountTapped), for: .touchUpInside)
-        return btnCreateAccount
+    let lblUsername: UILabel = {
+        let lblUsername = UILabel()
+        lblUsername.translatesAutoresizingMaskIntoConstraints = false
+        lblUsername.text = "Username"
+        lblUsername.numberOfLines = 0
+        lblUsername.textAlignment = .center
+        lblUsername.textColor = UIColor(named: "textPrimaryColor")
+        lblUsername.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblUsername
+    }()
+    
+    let txtFUsername: UITextField = {
+        let txtFUsername = UITextField()
+        txtFUsername.translatesAutoresizingMaskIntoConstraints = false
+        txtFUsername.placeholder = "Username"
+        txtFUsername.borderStyle = .none
+        
+        let underlineLayer = CALayer()
+        underlineLayer.backgroundColor = UIColor(named: "underlineTxtF")?.cgColor
+        underlineLayer.frame = CGRect(x: 0, y: txtFUsername.frame.height + 35, width: 335, height: 1)
+        txtFUsername.layer.addSublayer(underlineLayer)
+        
+        return txtFUsername
+    }()
+    
+    let lblPassword: UILabel = {
+        let lblPassword = UILabel()
+        lblPassword.translatesAutoresizingMaskIntoConstraints = false
+        lblPassword.text = "Password"
+        lblPassword.numberOfLines = 0
+        lblPassword.textAlignment = .center
+        lblPassword.textColor = UIColor(named: "textPrimaryColor")
+        lblPassword.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblPassword
+    }()
+    
+    let txtFPassword: UITextField = {
+        let txtFPassword = UITextField()
+        txtFPassword.translatesAutoresizingMaskIntoConstraints = false
+        txtFPassword.placeholder = "Password"
+        txtFPassword.borderStyle = .none
+        
+        let underlineLayer = CALayer()
+        underlineLayer.backgroundColor = UIColor(named: "underlineTxtF")?.cgColor
+        underlineLayer.frame = CGRect(x: 0, y: txtFPassword.frame.height + 35, width: 335, height: 1)
+        txtFPassword.layer.addSublayer(underlineLayer)
+        
+        return txtFPassword
+    }()
+    
+    let btnForgotPassword: UIButton = {
+       let btnForgotPassword = UIButton()
+        btnForgotPassword.translatesAutoresizingMaskIntoConstraints = false
+        btnForgotPassword.setTitle("Forgot Password?", for: .normal)
+        btnForgotPassword.setTitleColor(UIColor.red, for: .normal)
+        
+        return btnForgotPassword
+    }()
+    
+    let lblRememberMe: UILabel = {
+        let lblRememberMe = UILabel()
+        lblRememberMe.translatesAutoresizingMaskIntoConstraints = false
+        lblRememberMe.text = "Remember me"
+        lblRememberMe.textColor = UIColor(named: "txtDescColor")
+        lblRememberMe.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblRememberMe
+    }()
+    
+    let switchRememberMe: UISwitch = {
+        let switchRememberMe = UISwitch()
+        switchRememberMe.translatesAutoresizingMaskIntoConstraints = false
+        return switchRememberMe
+        
+    }()
+    
+    let lblTermConditionTop: UILabel = {
+        let lblTermConditionTop = UILabel()
+        lblTermConditionTop.translatesAutoresizingMaskIntoConstraints = false
+        lblTermConditionTop.text = "By connecting your account confirm that you agree"
+        lblTermConditionTop.textColor = UIColor(named: "txtDescColor")
+        lblTermConditionTop.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblTermConditionTop
+    }()
+    
+    let lblTermConditionBottom: UILabel = {
+        let lblTermConditionBottom = UILabel()
+        lblTermConditionBottom.translatesAutoresizingMaskIntoConstraints = false
+        lblTermConditionBottom.text = "with our"
+        lblTermConditionBottom.textColor = UIColor(named: "txtDescColor")
+        lblTermConditionBottom.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblTermConditionBottom
+    }()
+    
+    let btnTermsConditionBottom: UIButton = {
+        let btnTermsConditionBottom = UIButton()
+        btnTermsConditionBottom.translatesAutoresizingMaskIntoConstraints = false
+        btnTermsConditionBottom.setTitle("Term and Condition", for: .normal)
+        btnTermsConditionBottom.setTitleColor(UIColor(named: "textPrimaryColor"), for: .normal)
+        btnTermsConditionBottom.titleLabel?.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return btnTermsConditionBottom
+    }()
+    
+    private lazy var btnLoginUngu: UIButton = {
+        let btnLoginUngu = UIButton()
+        btnLoginUngu.translatesAutoresizingMaskIntoConstraints = false
+        btnLoginUngu.setTitle("Login", for: .normal)
+        btnLoginUngu.backgroundColor = UIColor(named: "btnOnBoardingTapped")
+        btnLoginUngu.setTitleColor(UIColor(named: "textPrimaryColor"), for: .normal)
+        btnLoginUngu.titleLabel?.font = UIFont(name: "Inter-Regular", size: 17)
+        btnLoginUngu.addTarget(self, action: #selector(btnLoginTapped), for: .touchUpInside)
+        
+        return btnLoginUngu
     }()
     
     
+
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
         view.addSubview(btnBack)
-        view.addSubview(txtTitle)
-        view.addSubview(btnFacebook)
-        view.addSubview(btnTwitter)
-        view.addSubview(btnGoogle)
-        view.addSubview(lblSignIn)
-        view.addSubview(btnSignIn)
-        view.addSubview(btnCreateAccount)
+        view.addSubview(lblWelcome)
+        view.addSubview(lblDescWelcome)
+        view.addSubview(lblUsername)
+        view.addSubview(txtFUsername)
+        view.addSubview(lblPassword)
+        view.addSubview(txtFPassword)
+        view.addSubview(btnForgotPassword)
+        view.addSubview(lblRememberMe)
+        view.addSubview(switchRememberMe)
+        view.addSubview(lblTermConditionTop)
+        view.addSubview(lblTermConditionBottom)
+        view.addSubview(btnTermsConditionBottom)
+        view.addSubview(btnLoginUngu
+        )
         
         
         NSLayoutConstraint.activate([
@@ -123,46 +197,63 @@ class LoginViewController: UIViewController {
             btnBack.heightAnchor.constraint(equalToConstant: 50),
             btnBack.widthAnchor.constraint(equalToConstant: 50),
             
+            //Untuk Label Welcome
+            lblWelcome.topAnchor.constraint(equalTo: btnBack.bottomAnchor, constant: 15),
+            lblWelcome.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 125),
             
-            //Untuk Title Label Judul
-            txtTitle.topAnchor.constraint(equalTo: btnBack.bottomAnchor, constant: 15),
-            txtTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 75),
+            //Untuk Label Desc Welcome
+            lblDescWelcome.topAnchor.constraint(equalTo: lblWelcome.bottomAnchor, constant: 5),
+            lblDescWelcome.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 65),
+            lblDescWelcome.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -65),
             
-            //Untuk Button Facebook
-            btnFacebook.topAnchor.constraint(equalTo: txtTitle.bottomAnchor, constant: 175),
-            btnFacebook.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            btnFacebook.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            btnFacebook.heightAnchor.constraint(equalToConstant: 50),
+            //Untuk label Username
+            lblUsername.topAnchor.constraint(equalTo: lblDescWelcome.bottomAnchor, constant: 164),
+            lblUsername.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            //Untuk Button Twitter
-            btnTwitter.topAnchor.constraint(equalTo: btnFacebook.bottomAnchor, constant: 10),
-            btnTwitter.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            btnTwitter.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            btnTwitter.heightAnchor.constraint(equalToConstant: 50),
+            //Untuk TextField Username
+            txtFUsername.topAnchor.constraint(equalTo: lblUsername.bottomAnchor, constant: 15),
+            txtFUsername.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            txtFUsername.widthAnchor.constraint(equalToConstant: 335),
             
-            //Untuk Button Google
-            btnGoogle.topAnchor.constraint(equalTo: btnTwitter.bottomAnchor, constant: 10),
-            btnGoogle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            btnGoogle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            btnGoogle.heightAnchor.constraint(equalToConstant: 50),
+            //Untuk Label Password
+            lblPassword.topAnchor.constraint(equalTo: txtFUsername.bottomAnchor, constant: 20),
+            lblPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            //Untuk Label Signin
-            lblSignIn.topAnchor.constraint(equalTo: btnGoogle.bottomAnchor, constant: 200),
-            lblSignIn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
-            lblSignIn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -20),
-            lblSignIn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            lblSignIn.heightAnchor.constraint(equalToConstant: 50),
+            //Untuk TextField Password
+            txtFPassword.topAnchor.constraint(equalTo: lblPassword.bottomAnchor, constant: 15),
+            txtFPassword.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            txtFPassword.widthAnchor.constraint(equalToConstant: 335),
             
-            //Untuk Button Signin
-            btnSignIn.topAnchor.constraint(equalTo: btnGoogle.bottomAnchor, constant: 200),
-            btnSignIn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
-            btnSignIn.leadingAnchor.constraint(equalTo: lblSignIn.trailingAnchor, constant: -100),
+            //Untuk Button Forgot Password
+            btnForgotPassword.topAnchor.constraint(equalTo: txtFPassword.bottomAnchor, constant: 50),
+            btnForgotPassword.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            //Untuk View Bottom Ungu
-            btnCreateAccount.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            btnCreateAccount.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            btnCreateAccount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            btnCreateAccount.heightAnchor.constraint(equalToConstant: 75),
+            //Untuk Label Remember Me
+            lblRememberMe.topAnchor.constraint(equalTo: btnForgotPassword.bottomAnchor, constant: 40),
+            lblRememberMe.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            //Untuk Switch Remember Me
+            switchRememberMe.topAnchor.constraint(equalTo: btnForgotPassword.bottomAnchor, constant: 40),
+            switchRememberMe.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            //Untuk Label Terms And Condition Top
+            lblTermConditionTop.topAnchor.constraint(equalTo: switchRememberMe.bottomAnchor, constant: 107),
+            lblTermConditionTop.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            lblTermConditionTop.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            
+            //Untuk Label Terms And Condition Bottom
+            lblTermConditionBottom.topAnchor.constraint(equalTo: lblTermConditionTop.bottomAnchor, constant: 10),
+            lblTermConditionBottom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
+            
+            //Untuk Button Terms And Condition Bottom
+            btnTermsConditionBottom.topAnchor.constraint(equalTo: lblTermConditionTop.bottomAnchor, constant: 5),
+            btnTermsConditionBottom.leadingAnchor.constraint(equalTo: lblTermConditionBottom.trailingAnchor, constant: 5),
+            
+            //Untuk Button Login Ungu
+            btnLoginUngu.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            btnLoginUngu.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            btnLoginUngu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            btnLoginUngu.heightAnchor.constraint(equalToConstant: 75),
         ])
     }
     
@@ -171,44 +262,10 @@ class LoginViewController: UIViewController {
         print("btnBack Tapped")
     }
     
-    
-    //for facebook
-    @objc func loginButtonFacebookClicked() {
-        let loginManager = LoginManager()
-        loginManager.logIn(permissions: ["public_profile", "email"], from: self, handler: { result, error in
-            if error != nil {
-                print("ERROR: Trying to get login results")
-            } else if result?.isCancelled != nil {
-                print("The token is \(result?.token?.tokenString ?? "")")
-                if result?.token?.tokenString != nil {
-                    print("Logged in")
-                    //                        self.getUserProfile(token: result?.token, userId: result?.token?.userID)
-                } else {
-                    print("Cancelled")
-                }
-            }
-        })
+    @objc func btnLoginTapped() {
+        let tabBarVC = TabBarController()
+        navigationController?.pushViewController(tabBarVC, animated: true)
+        
+        print("btnLogin Tapped")
     }
-    
-    //for twitter
-    @objc func loginButtonTwitterClicked() {
-        let swifter = Swifter(consumerKey: TwitterConstants.CONSUMER_KEY, consumerSecret: TwitterConstants.CONSUMER_SECRET_KEY)
-        swifter.authorize(withCallback: URL(string: TwitterConstants.CALLBACK_URL)!, presentingFrom: self, success: { accessToken, _ in
-            self.accToken = accessToken
-            //            self.getUserProfile()
-        }, failure: { error in
-            print("ERROR: Trying to authorize - \(error)")
-        })
-    }
-    
-    //for google
-    
-    
-    
-    
-    //btnCreate Account
-    @objc func btnCreateAccountTapped() {
-        print("btnCreate Account Tapped")
-    }
-    
 }
