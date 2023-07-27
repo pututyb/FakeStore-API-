@@ -7,23 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087F85CF2A714CE600BC1973 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 087F85CE2A714CE600BC1973 /* Swifter */; };
+		087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85D02A71518A00BC1973 /* TwitterConstants.swift */; };
 		08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE42A709F0200F770AD /* AppDelegate.swift */; };
 		08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE62A709F0300F770AD /* SceneDelegate.swift */; };
 		08922EE92A709F0300F770AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE82A709F0300F770AD /* ViewController.swift */; };
-		08922EEC2A709F0300F770AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08922EEA2A709F0300F770AD /* Main.storyboard */; };
 		08922EEE2A709F0500F770AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08922EED2A709F0500F770AD /* Assets.xcassets */; };
 		08922EF12A709F0500F770AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08922EEF2A709F0500F770AD /* LaunchScreen.storyboard */; };
+		08922F0C2A70BC2000F770AD /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F032A70BC1F00F770AD /* Inter-Medium.ttf */; };
+		08922F0D2A70BC2000F770AD /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F042A70BC2000F770AD /* Inter-Black.ttf */; };
+		08922F0E2A70BC2000F770AD /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F052A70BC2000F770AD /* Inter-ExtraBold.ttf */; };
+		08922F0F2A70BC2000F770AD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F062A70BC2000F770AD /* Inter-Regular.ttf */; };
+		08922F102A70BC2000F770AD /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F072A70BC2000F770AD /* Inter-ExtraLight.ttf */; };
+		08922F112A70BC2000F770AD /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F082A70BC2000F770AD /* Inter-Bold.ttf */; };
+		08922F122A70BC2000F770AD /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F092A70BC2000F770AD /* Inter-Thin.ttf */; };
+		08922F132A70BC2000F770AD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */; };
+		08922F142A70BC2000F770AD /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0B2A70BC2000F770AD /* Inter-Light.ttf */; };
+		08922F162A70CA0700F770AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F152A70CA0700F770AD /* LoginViewController.swift */; };
+		08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */; };
+		08922F1E2A71005600F770AD /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 08922F1D2A71005600F770AD /* FacebookLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087F85D02A71518A00BC1973 /* TwitterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterConstants.swift; sourceTree = "<group>"; };
 		08922EE12A709F0200F770AD /* FakeStore(API).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FakeStore(API).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08922EE42A709F0200F770AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08922EE62A709F0300F770AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		08922EE82A709F0300F770AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		08922EEB2A709F0300F770AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08922EED2A709F0500F770AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08922EF02A709F0500F770AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08922EF22A709F0500F770AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08922F032A70BC1F00F770AD /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		08922F042A70BC2000F770AD /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		08922F052A70BC2000F770AD /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		08922F062A70BC2000F770AD /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		08922F072A70BC2000F770AD /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		08922F082A70BC2000F770AD /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		08922F092A70BC2000F770AD /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		08922F0B2A70BC2000F770AD /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		08922F152A70CA0700F770AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFacebookViewModels.swift; path = ../../../../../Documents/LoginFacebookViewModels.swift; sourceTree = "<group>"; };
+		08922F1F2A71042200F770AD /* FakeStore(API).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FakeStore(API).entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08922F1E2A71005600F770AD /* FacebookLogin in Frameworks */,
+				087F85CF2A714CE600BC1973 /* Swifter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +83,67 @@
 		08922EE32A709F0200F770AD /* FakeStore(API) */ = {
 			isa = PBXGroup;
 			children = (
-				08922EE42A709F0200F770AD /* AppDelegate.swift */,
-				08922EE62A709F0300F770AD /* SceneDelegate.swift */,
-				08922EE82A709F0300F770AD /* ViewController.swift */,
-				08922EEA2A709F0300F770AD /* Main.storyboard */,
-				08922EED2A709F0500F770AD /* Assets.xcassets */,
+				08922F1F2A71042200F770AD /* FakeStore(API).entitlements */,
+				08922EF82A709F2D00F770AD /* Resource */,
+				08922F192A70CE3300F770AD /* Models */,
+				08922F182A70CE2E00F770AD /* ViewModels */,
+				08922F172A70CE2700F770AD /* ViewControllers */,
+				08922EF92A70BBFC00F770AD /* Fonts */,
 				08922EEF2A709F0500F770AD /* LaunchScreen.storyboard */,
 				08922EF22A709F0500F770AD /* Info.plist */,
+				087F85D02A71518A00BC1973 /* TwitterConstants.swift */,
 			);
 			path = "FakeStore(API)";
+			sourceTree = "<group>";
+		};
+		08922EF82A709F2D00F770AD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				08922EE42A709F0200F770AD /* AppDelegate.swift */,
+				08922EE62A709F0300F770AD /* SceneDelegate.swift */,
+				08922EED2A709F0500F770AD /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		08922EF92A70BBFC00F770AD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				08922F042A70BC2000F770AD /* Inter-Black.ttf */,
+				08922F082A70BC2000F770AD /* Inter-Bold.ttf */,
+				08922F052A70BC2000F770AD /* Inter-ExtraBold.ttf */,
+				08922F072A70BC2000F770AD /* Inter-ExtraLight.ttf */,
+				08922F0B2A70BC2000F770AD /* Inter-Light.ttf */,
+				08922F032A70BC1F00F770AD /* Inter-Medium.ttf */,
+				08922F062A70BC2000F770AD /* Inter-Regular.ttf */,
+				08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */,
+				08922F092A70BC2000F770AD /* Inter-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		08922F172A70CE2700F770AD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				08922EE82A709F0300F770AD /* ViewController.swift */,
+				08922F152A70CA0700F770AD /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		08922F182A70CE2E00F770AD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		08922F192A70CE3300F770AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +162,10 @@
 			dependencies = (
 			);
 			name = "FakeStore(API)";
+			packageProductDependencies = (
+				08922F1D2A71005600F770AD /* FacebookLogin */,
+				087F85CE2A714CE600BC1973 /* Swifter */,
+			);
 			productName = "FakeStore(API)";
 			productReference = 08922EE12A709F0200F770AD /* FakeStore(API).app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +194,10 @@
 				Base,
 			);
 			mainGroup = 08922ED82A709F0200F770AD;
+			packageReferences = (
+				08922F1C2A71005600F770AD /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				087F85CD2A714CE600BC1973 /* XCRemoteSwiftPackageReference "Swifter" */,
+			);
 			productRefGroup = 08922EE22A709F0200F770AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +212,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08922F0E2A70BC2000F770AD /* Inter-ExtraBold.ttf in Resources */,
 				08922EF12A709F0500F770AD /* LaunchScreen.storyboard in Resources */,
+				08922F122A70BC2000F770AD /* Inter-Thin.ttf in Resources */,
+				08922F112A70BC2000F770AD /* Inter-Bold.ttf in Resources */,
 				08922EEE2A709F0500F770AD /* Assets.xcassets in Resources */,
-				08922EEC2A709F0300F770AD /* Main.storyboard in Resources */,
+				08922F102A70BC2000F770AD /* Inter-ExtraLight.ttf in Resources */,
+				08922F0C2A70BC2000F770AD /* Inter-Medium.ttf in Resources */,
+				08922F0F2A70BC2000F770AD /* Inter-Regular.ttf in Resources */,
+				08922F142A70BC2000F770AD /* Inter-Light.ttf in Resources */,
+				08922F132A70BC2000F770AD /* Inter-SemiBold.ttf in Resources */,
+				08922F0D2A70BC2000F770AD /* Inter-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +233,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08922F162A70CA0700F770AD /* LoginViewController.swift in Sources */,
+				08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */,
 				08922EE92A709F0300F770AD /* ViewController.swift in Sources */,
 				08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */,
 				08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */,
+				087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		08922EEA2A709F0300F770AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08922EEB2A709F0300F770AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		08922EEF2A709F0500F770AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "FakeStore(API)/FakeStore(API).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P8794RMH4C;
@@ -292,7 +383,6 @@
 				INFOPLIST_FILE = "FakeStore(API)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "FakeStore(API)/FakeStore(API).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P8794RMH4C;
@@ -320,7 +411,6 @@
 				INFOPLIST_FILE = "FakeStore(API)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +448,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		087F85CD2A714CE600BC1973 /* XCRemoteSwiftPackageReference "Swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattdonnelly/Swifter";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		08922F1C2A71005600F770AD /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		087F85CE2A714CE600BC1973 /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 087F85CD2A714CE600BC1973 /* XCRemoteSwiftPackageReference "Swifter" */;
+			productName = Swifter;
+		};
+		08922F1D2A71005600F770AD /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08922F1C2A71005600F770AD /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08922ED92A709F0200F770AD /* Project object */;
 }
