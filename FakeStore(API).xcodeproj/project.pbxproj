@@ -31,8 +31,10 @@
 		08922F132A70BC2000F770AD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */; };
 		08922F142A70BC2000F770AD /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08922F0B2A70BC2000F770AD /* Inter-Light.ttf */; };
 		08922F162A70CA0700F770AD /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F152A70CA0700F770AD /* GetStartedViewController.swift */; };
-		08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */; };
 		08922F1E2A71005600F770AD /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 08922F1D2A71005600F770AD /* FacebookLogin */; };
+		08A068762A73F4A300E6D497 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A068752A73F4A300E6D497 /* Model.swift */; };
+		08A068792A73F5F800E6D497 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A068782A73F5F800E6D497 /* API.swift */; };
+		08A0687B2A73FC5100E6D497 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0687A2A73FC5100E6D497 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +63,10 @@
 		08922F0A2A70BC2000F770AD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		08922F0B2A70BC2000F770AD /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
 		08922F152A70CA0700F770AD /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
-		08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginFacebookViewModels.swift; path = ../../../../../Documents/LoginFacebookViewModels.swift; sourceTree = "<group>"; };
 		08922F1F2A71042200F770AD /* FakeStore(API).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FakeStore(API).entitlements"; sourceTree = "<group>"; };
+		08A068752A73F4A300E6D497 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		08A068782A73F5F800E6D497 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		08A0687A2A73FC5100E6D497 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		08922EE32A709F0200F770AD /* FakeStore(API) */ = {
 			isa = PBXGroup;
 			children = (
+				08A068772A73F5EB00E6D497 /* Networks */,
 				08922F1F2A71042200F770AD /* FakeStore(API).entitlements */,
 				08922EF82A709F2D00F770AD /* Resource */,
 				08922F192A70CE3300F770AD /* Models */,
@@ -155,7 +160,7 @@
 		08922F182A70CE2E00F770AD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				08922F1A2A70FC6B00F770AD /* LoginFacebookViewModels.swift */,
+				08A0687A2A73FC5100E6D497 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -163,8 +168,17 @@
 		08922F192A70CE3300F770AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08A068752A73F4A300E6D497 /* Model.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		08A068772A73F5EB00E6D497 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				08A068782A73F5F800E6D497 /* API.swift */,
+			);
+			path = Networks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,14 +272,16 @@
 				08922F162A70CA0700F770AD /* GetStartedViewController.swift in Sources */,
 				087F85D32A71F6B800BC1973 /* SignupViewController.swift in Sources */,
 				087F85DB2A724B4800BC1973 /* WishlistViewController.swift in Sources */,
-				08922F1B2A70FC6B00F770AD /* LoginFacebookViewModels.swift in Sources */,
+				08A068792A73F5F800E6D497 /* API.swift in Sources */,
 				08922EE92A709F0300F770AD /* ViewController.swift in Sources */,
 				087F85D52A722E2B00BC1973 /* LoginViewController.swift in Sources */,
+				08A068762A73F4A300E6D497 /* Model.swift in Sources */,
 				087F85D92A724B1200BC1973 /* HomeViewController.swift in Sources */,
 				087F85D72A724A7300BC1973 /* TabBarController.swift in Sources */,
 				08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */,
 				08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */,
 				087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */,
+				08A0687B2A73FC5100E6D497 /* UserViewModel.swift in Sources */,
 				087F85DD2A724C4000BC1973 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

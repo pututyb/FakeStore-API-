@@ -101,6 +101,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
         view.backgroundColor = UIColor(named: "backgroundLaunchScreen")
         view.addSubview(imageView)
         view.addSubview(uiViewBottom)
@@ -151,6 +152,7 @@ class ViewController: UIViewController {
             btnSkip.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 154),
             btnSkip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -154),
 //            btnSkip.heightAnchor.constraint(equalToConstant: 30)
+            
         ])
     }
     
@@ -161,6 +163,7 @@ class ViewController: UIViewController {
             btnWomen.backgroundColor = UIColor(named: "btnOnBoarding")
             isButtonMenToggled = true
             print("Button Men Tapped")
+            
         } else if sender == btnWomen {
             btnWomen.backgroundColor = UIColor(named: "btnOnBoardingTapped")
             btnMen.backgroundColor = UIColor(named: "btnOnBoarding")

@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    private let userViewModel = UserViewModel()
+    
     private lazy var btnBack: UIButton = {
         let btnBack = UIButton()
         btnBack.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +100,7 @@ class LoginViewController: UIViewController {
     }()
     
     let btnForgotPassword: UIButton = {
-       let btnForgotPassword = UIButton()
+        let btnForgotPassword = UIButton()
         btnForgotPassword.translatesAutoresizingMaskIntoConstraints = false
         btnForgotPassword.setTitle("Forgot Password?", for: .normal)
         btnForgotPassword.setTitleColor(UIColor.red, for: .normal)
@@ -166,10 +168,10 @@ class LoginViewController: UIViewController {
     }()
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
         view.addSubview(btnBack)
@@ -263,9 +265,22 @@ class LoginViewController: UIViewController {
     }
     
     @objc func btnLoginTapped() {
-        let tabBarVC = TabBarController()
-        navigationController?.pushViewController(tabBarVC, animated: true)
+        guard let username = txtFUsername.text, let password = txtFPassword.text else {
+            print("Please enter username and password")
+            return
+        }
         
-        print("btnLogin Tapped")
+        userViewModel.fetchUsers { users in
+            DispatchQueue.main.async {
+                if users.contains(where: { $0.username == username && $0.password == password }) {
+                    // Login successful, navigate to another view (e.g., HomeViewController)
+                    let homeVC = HomeViewController()
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                } else {
+                    // Show an alert or label indicating failed login attempt
+                    print("Invalid username or password")
+                }
+            }
+        }
     }
 }

@@ -86,7 +86,7 @@ class GetStartedViewController: UIViewController {
         btnSignIn.setTitle("Sign In", for: .normal)
         btnSignIn.setTitleColor(UIColor(named: "textPrimaryColor"), for: .normal)
         btnSignIn.titleLabel?.font = UIFont(name: "Inter-Bold", size: 15)
-        btnSignIn.addTarget(self, action: #selector(btnBackTapped), for: .touchUpInside)
+        btnSignIn.addTarget(self, action: #selector(btnSignInTapped), for: .touchUpInside)
         return btnSignIn
     }()
     
@@ -169,6 +169,12 @@ class GetStartedViewController: UIViewController {
     @objc func btnBackTapped() {
         navigationController?.popViewController(animated: true)
         print("btnBack Tapped")
+    }
+    
+    @objc func btnSignInTapped() {
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
+        print("Sign In")
     }
     
     
