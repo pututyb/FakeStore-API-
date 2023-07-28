@@ -273,11 +273,9 @@ class LoginViewController: UIViewController {
         userViewModel.fetchUsers { users in
             DispatchQueue.main.async {
                 if users.contains(where: { $0.username == username && $0.password == password }) {
-                    // Login successful, navigate to another view (e.g., HomeViewController)
                     let homeVC = HomeViewController()
                     self.navigationController?.pushViewController(homeVC, animated: true)
                 } else {
-                    // Show an alert or label indicating failed login attempt
                     print("Invalid username or password")
                 }
             }
