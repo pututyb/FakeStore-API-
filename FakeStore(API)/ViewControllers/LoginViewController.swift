@@ -172,6 +172,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
         view.addSubview(btnBack)
@@ -256,7 +257,14 @@ class LoginViewController: UIViewController {
             btnLoginUngu.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             btnLoginUngu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             btnLoginUngu.heightAnchor.constraint(equalToConstant: 75),
+            
         ])
+        
+        //Untuk Check Status User Sudah Login / Belum.
+        if let savedUsername = UserDefaults.standard.string(forKey: "username"),
+        let savedPassword = UserDefaults.standard.string(forKey: "password") {
+            attempLogin(username: savedUsername, password: savedPassword)
+        }
     }
     
     @objc func btnBackTapped() {
@@ -272,11 +280,31 @@ class LoginViewController: UIViewController {
         
         userViewModel.fetchUsers { users in
             DispatchQueue.main.async {
-                if users.contains(where: { $0.username == username && $0.password == password }) {
+                if users.contains(where: {$0.username == username && $0.password == password}) {
+                    UserDefaults.standard.set(username, forKey: "username")
+                    UserDefaults.standard.set(password, forKey: "password")
+                    UserDefaults.standard.synchronize()
+                    
                     let homeVC = HomeViewController()
                     self.navigationController?.pushViewController(homeVC, animated: true)
                 } else {
-                    print("Invalid username or password")
+                    print("Invalid Email or Password")
+                }
+            }
+        }
+    }
+    
+    private func attempLogin(username: String, password: String) {
+        userViewModel.fetchUsers { users in
+            DispatchQueue.main.async {
+                if users.contains(where: {$0.username == username && $0.password == password}) {
+                    let savedUsername = UserDefaults.standard.string(forKey: "username")
+                    let homeVC = HomeViewController()
+                    self.navigationController?.pushViewController(homeVC, animated: true)
+                } else {
+                    UserDefaults.standard.removeObject(forKey: "username")
+                    UserDefaults.standard.removeObject(forKey: "password")
+                    UserDefaults.standard.synchronize()
                 }
             }
         }
