@@ -19,25 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        Thread.sleep(forTimeInterval: 3.0)
         
-        // Initialize the UIWindow
-        window = UIWindow(frame: UIScreen.main.bounds)
-        
-        // Check if the user is logged in
-        let isLoggedIn = checkLoginStatus()
-        
-        if isLoggedIn {
-            // User is logged in, show HomeViewController
-            let homeVC = HomeViewController()
-            let navigationController = UINavigationController(rootViewController: homeVC)
-            window?.rootViewController = navigationController
-        } else {
-            // User is not logged in, show LoginViewController
-            let loginVC = LoginViewController()
-            window?.rootViewController = loginVC
-        }
-        
-        // Make the window visible
-        window?.makeKeyAndVisible()
         
         // Initialize Facebook SDK
 //        ApplicationDelegate.shared.application(
@@ -48,22 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // MARK: - User Login Status
-    
-    private func checkLoginStatus() -> Bool {
-        // Check if the login data (username and password) exists in UserDefaults
-        if let savedUsername = UserDefaults.standard.string(forKey: "username"),
-           let _ = UserDefaults.standard.string(forKey: "password") {
-            // User is logged in
-            print("User Telah Login")
-            print(savedUsername)
-            return true
-        } else {
-            // User is not logged in
-            print("User Belum Login")
-            return false
-        }
-    }
     
     // MARK: - Other AppDelegate methods
     
