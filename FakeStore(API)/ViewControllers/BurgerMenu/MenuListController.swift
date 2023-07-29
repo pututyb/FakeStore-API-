@@ -38,5 +38,19 @@ class MenuListController: UITableViewController {
             navController.modalPresentationStyle = .fullScreen
             present(navController, animated: true, completion: nil)
         }
+        
+        if selectedItem == "Logout" {
+            print("Info Logout Terbaru")
+            // Remove username and password from UserDefaults
+            UserDefaults.standard.removeObject(forKey: "username")
+            UserDefaults.standard.removeObject(forKey: "password")
+            UserDefaults.standard.synchronize()
+            print(UserDefaults.standard.removeObject(forKey: "username"))
+            
+            // Navigate back to the GetStarted Screenhid
+            let getStartedVC = GetStartedViewController()
+            let navigationController = UINavigationController(rootViewController: getStartedVC)
+            view.window?.windowScene?.keyWindow?.rootViewController = navigationController
+        }
     }
 }

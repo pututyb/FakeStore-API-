@@ -90,6 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         txtFPassword.translatesAutoresizingMaskIntoConstraints = false
         txtFPassword.placeholder = "Password"
         txtFPassword.borderStyle = .none
+        txtFPassword.isSecureTextEntry = true
         
         let underlineLayer = CALayer()
         underlineLayer.backgroundColor = UIColor(named: "underlineTxtF")?.cgColor

@@ -127,6 +127,7 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.removeObject(forKey: "password")
         UserDefaults.standard.synchronize()
+        print(UserDefaults.standard.removeObject(forKey: "username"))
         
         // Navigate back to the GetStarted Screenhid
         let getStartedVC = GetStartedViewController()
