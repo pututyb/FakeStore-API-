@@ -172,6 +172,23 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @objc func btnResetPassTapped() {
-        print("BtnReset Tapped")
+        guard let newPassword = txtFPassword.text, !newPassword.isEmpty,
+              let confirmPassword = txtFConfirmPassword.text, !confirmPassword.isEmpty else {
+            print("Please enter both new password and confirm password.")
+            return
+        }
+        
+        guard newPassword == confirmPassword else {
+            print("Passwords do not match.")
+            return
+        }
+        
+        // Update password dengan forkeynya password
+        UserDefaults.standard.set(newPassword, forKey: "password")
+        
+        if let updatedPassword = UserDefaults.standard.string(forKey: "password") {
+            print("New Password is : " + updatedPassword)
+        }
     }
+    
 }

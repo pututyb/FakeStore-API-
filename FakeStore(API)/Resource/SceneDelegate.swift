@@ -66,10 +66,11 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 private func checkLoginStatus() -> Bool {
     // Check if the login data (username and password) exists in UserDefaults
     if let savedUsername = UserDefaults.standard.string(forKey: "username"),
-       let _ = UserDefaults.standard.string(forKey: "password") {
+       let savedPassword = UserDefaults.standard.string(forKey: "password") {
         // User is logged in
         print("User Telah Login")
         print(savedUsername)
+        print(savedPassword)
         return true
     } else {
         // User is not logged in
