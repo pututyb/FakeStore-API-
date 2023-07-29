@@ -296,8 +296,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     UserDefaults.standard.synchronize()
                     
                     
-                    let homeVC = HomeViewController()
-                    self.navigationController?.pushViewController(homeVC, animated: true)
+                    let tabBarVC = TabBarController()
+                    self.navigationController?.pushViewController(tabBarVC, animated: true)
                     self.navigationController?.setNavigationBarHidden(true, animated: true)
                     
                 } else {

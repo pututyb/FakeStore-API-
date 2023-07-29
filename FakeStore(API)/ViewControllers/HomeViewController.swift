@@ -127,9 +127,9 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "password")
         UserDefaults.standard.synchronize()
         
-        // Navigate back to the login screen
-        let loginVC = LoginViewController()
-        navigationController?.pushViewController(loginVC, animated: true)
+        // Navigate back to the GetStarted Screen
+        let getStarted = GetStartedViewController()
+        navigationController?.pushViewController(getStarted, animated: true)
     }
     
     @objc private func sideMenuTapped() {
