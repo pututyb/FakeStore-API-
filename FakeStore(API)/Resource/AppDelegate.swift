@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Thread.sleep(forTimeInterval: 3.0)
         
         
-        // Initialize Facebook SDK
-//        ApplicationDelegate.shared.application(
-//            application,
-//            didFinishLaunchingWithOptions: launchOptions
-//        )
+         Initialize Facebook SDK
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
         
         return true
     }
