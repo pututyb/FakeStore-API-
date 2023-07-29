@@ -105,6 +105,7 @@ class GetStartedViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
+        
         view.addSubview(btnBack)
         view.addSubview(txtTitle)
         view.addSubview(btnFacebook)

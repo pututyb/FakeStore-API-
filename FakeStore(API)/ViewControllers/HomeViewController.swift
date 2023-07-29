@@ -66,6 +66,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
         
+        
         //Side MenuBar
         menu.leftSide = true
         
@@ -127,9 +128,10 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: "password")
         UserDefaults.standard.synchronize()
         
-        // Navigate back to the GetStarted Screen
-        let getStarted = GetStartedViewController()
-        navigationController?.pushViewController(getStarted, animated: true)
+        // Navigate back to the GetStarted Screenhid
+        let getStartedVC = GetStartedViewController()
+        let navigationController = UINavigationController(rootViewController: getStartedVC)
+        view.window?.windowScene?.keyWindow?.rootViewController = navigationController
     }
     
     @objc private func sideMenuTapped() {

@@ -27,9 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if isLoggedIn {
             // User is logged in, show HomeViewController
-            let homeVC = HomeViewController()
-            let navigationController = UINavigationController(rootViewController: homeVC)
-            window?.rootViewController = navigationController
+            let homeVC = TabBarController()
+            window?.rootViewController = homeVC
         } else {
             // User is not logged in, show GetStartedViewController
             let getStartedVC = GetStartedViewController()

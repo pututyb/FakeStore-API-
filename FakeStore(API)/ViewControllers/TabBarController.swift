@@ -25,6 +25,12 @@ class TabBarController: UITabBarController {
         vc3.tabBarItem.image = UIImage(named: "bag")
         vc4.tabBarItem.image = UIImage(named: "mycards")
         
+        vc1.setNavigationBarHidden(true, animated: false)
+        vc2.setNavigationBarHidden(true, animated: false)
+        vc3.setNavigationBarHidden(true, animated: false)
+        vc4.setNavigationBarHidden(true, animated: false)
+        
+        
         tabBar.tintColor = .label
         
         setupTabBarItemImage(title: "Home", vc: vc1)

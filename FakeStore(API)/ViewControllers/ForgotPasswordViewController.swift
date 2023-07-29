@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController,UITextFieldDelegate {
     
     private lazy var btnBack: UIButton = {
         let btnBack = UIButton()
@@ -113,6 +113,9 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
+        txtFPassword.delegate = self
+        txtFConfirmPassword.delegate = self
+        
         view.addSubview(btnBack)
         view.addSubview(lblTitle)
         view.addSubview(lblPassword)
@@ -166,6 +169,11 @@ class ForgotPasswordViewController: UIViewController {
         ])
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @objc func btnBackTapped() {
         dismiss(animated: true, completion: nil)
         print("btnBack Tapped")
@@ -187,6 +195,7 @@ class ForgotPasswordViewController: UIViewController {
         UserDefaults.standard.set(newPassword, forKey: "password")
         
         if let updatedPassword = UserDefaults.standard.string(forKey: "password") {
+            
             print("New Password is : " + updatedPassword)
         }
     }
