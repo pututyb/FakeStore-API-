@@ -175,6 +175,7 @@ class GetStartedViewController: UIViewController {
         let loginVC = LoginViewController()
         navigationController?.pushViewController(loginVC, animated: true)
         print("Sign In")
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -214,11 +215,9 @@ class GetStartedViewController: UIViewController {
     
     //btnCreate Account
     @objc func btnCreateAccountTapped() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        
         let signupVC = SignupViewController()
         navigationController?.pushViewController(signupVC, animated: true)
         print("btnCreate Account Tapped")
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    
 }

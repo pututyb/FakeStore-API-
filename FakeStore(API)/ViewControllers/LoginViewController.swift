@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let userViewModel = UserViewModel()
     
@@ -172,6 +172,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        txtFUsername.delegate = self
+        txtFPassword.delegate = self
         
         view.backgroundColor = UIColor(named: "appBackgroundColor")
         
@@ -256,7 +260,7 @@ class LoginViewController: UIViewController {
             btnLoginUngu.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             btnLoginUngu.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             btnLoginUngu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            btnLoginUngu.heightAnchor.constraint(equalToConstant: 75),
+            btnLoginUngu.heightAnchor.constraint(equalToConstant: 50),
             
         ])
         
@@ -265,6 +269,11 @@ class LoginViewController: UIViewController {
         let savedPassword = UserDefaults.standard.string(forKey: "password") {
             attempLogin(username: savedUsername, password: savedPassword)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @objc func btnBackTapped() {
@@ -283,22 +292,27 @@ class LoginViewController: UIViewController {
                 if users.contains(where: {$0.username == username && $0.password == password}) {
                     UserDefaults.standard.set(username, forKey: "username")
                     UserDefaults.standard.set(password, forKey: "password")
+                    print("dont want refersh the view.")
                     UserDefaults.standard.synchronize()
+                    
                     
                     let homeVC = HomeViewController()
                     self.navigationController?.pushViewController(homeVC, animated: true)
+                    self.navigationController?.setNavigationBarHidden(true, animated: true)
+                    
                 } else {
                     print("Invalid Email or Password")
                 }
             }
         }
     }
+
     
     private func attempLogin(username: String, password: String) {
         userViewModel.fetchUsers { users in
             DispatchQueue.main.async {
                 if users.contains(where: {$0.username == username && $0.password == password}) {
-                    let savedUsername = UserDefaults.standard.string(forKey: "username")
+                    _ = UserDefaults.standard.string(forKey: "username")
                     let homeVC = HomeViewController()
                     self.navigationController?.pushViewController(homeVC, animated: true)
                 } else {

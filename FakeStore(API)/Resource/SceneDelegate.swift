@@ -31,9 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationController = UINavigationController(rootViewController: homeVC)
             window?.rootViewController = navigationController
         } else {
-            // User is not logged in, show LoginViewController
-            let loginVC = LoginViewController()
-            window?.rootViewController = loginVC
+            // User is not logged in, show GetStartedViewController
+            let getStartedVC = GetStartedViewController()
+            let navigationController = UINavigationController(rootViewController: getStartedVC)
+            window?.rootViewController = navigationController
         }
         
         // Make the window visible

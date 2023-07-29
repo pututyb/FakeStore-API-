@@ -16,6 +16,10 @@
 		087F85DB2A724B4800BC1973 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DA2A724B4800BC1973 /* WishlistViewController.swift */; };
 		087F85DD2A724C4000BC1973 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DC2A724C4000BC1973 /* OrderViewController.swift */; };
 		087F85DF2A724C5F00BC1973 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */; };
+		08894B0C2A75066100EE3A80 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 08894B0B2A75066100EE3A80 /* SideMenu */; };
+		08894B112A750A5F00EE3A80 /* MenuListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08894B102A750A5F00EE3A80 /* MenuListController.swift */; };
+		08894B132A750C2300EE3A80 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08894B122A750C2300EE3A80 /* TableViewCell.swift */; };
+		08894B152A7512FC00EE3A80 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08894B142A7512FC00EE3A80 /* ForgotPasswordViewController.swift */; };
 		08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE42A709F0200F770AD /* AppDelegate.swift */; };
 		08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE62A709F0300F770AD /* SceneDelegate.swift */; };
 		08922EE92A709F0300F770AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08922EE82A709F0300F770AD /* ViewController.swift */; };
@@ -46,6 +50,9 @@
 		087F85DA2A724B4800BC1973 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
 		087F85DC2A724C4000BC1973 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		08894B102A750A5F00EE3A80 /* MenuListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListController.swift; sourceTree = "<group>"; };
+		08894B122A750C2300EE3A80 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		08894B142A7512FC00EE3A80 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		08922EE12A709F0200F770AD /* FakeStore(API).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FakeStore(API).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08922EE42A709F0200F770AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08922EE62A709F0300F770AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08922F1E2A71005600F770AD /* FacebookLogin in Frameworks */,
+				08894B0C2A75066100EE3A80 /* SideMenu in Frameworks */,
 				087F85CF2A714CE600BC1973 /* Swifter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08894B0D2A750A0C00EE3A80 /* BurgerMenu */ = {
+			isa = PBXGroup;
+			children = (
+				08894B102A750A5F00EE3A80 /* MenuListController.swift */,
+				08894B122A750C2300EE3A80 /* TableViewCell.swift */,
+			);
+			path = BurgerMenu;
+			sourceTree = "<group>";
+		};
 		08922ED82A709F0200F770AD = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +161,7 @@
 		08922F172A70CE2700F770AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				08894B0D2A750A0C00EE3A80 /* BurgerMenu */,
 				08922EE82A709F0300F770AD /* ViewController.swift */,
 				08922F152A70CA0700F770AD /* GetStartedViewController.swift */,
 				087F85D22A71F6B800BC1973 /* SignupViewController.swift */,
@@ -153,6 +171,7 @@
 				087F85DA2A724B4800BC1973 /* WishlistViewController.swift */,
 				087F85DC2A724C4000BC1973 /* OrderViewController.swift */,
 				087F85DE2A724C5F00BC1973 /* MyCardsViewController.swift */,
+				08894B142A7512FC00EE3A80 /* ForgotPasswordViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 			packageProductDependencies = (
 				08922F1D2A71005600F770AD /* FacebookLogin */,
 				087F85CE2A714CE600BC1973 /* Swifter */,
+				08894B0B2A75066100EE3A80 /* SideMenu */,
 			);
 			productName = "FakeStore(API)";
 			productReference = 08922EE12A709F0200F770AD /* FakeStore(API).app */;
@@ -232,6 +252,7 @@
 			packageReferences = (
 				08922F1C2A71005600F770AD /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				087F85CD2A714CE600BC1973 /* XCRemoteSwiftPackageReference "Swifter" */,
+				08894B0A2A75066100EE3A80 /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 08922EE22A709F0200F770AD /* Products */;
 			projectDirPath = "";
@@ -276,11 +297,14 @@
 				08922EE92A709F0300F770AD /* ViewController.swift in Sources */,
 				087F85D52A722E2B00BC1973 /* LoginViewController.swift in Sources */,
 				08A068762A73F4A300E6D497 /* Model.swift in Sources */,
+				08894B112A750A5F00EE3A80 /* MenuListController.swift in Sources */,
 				087F85D92A724B1200BC1973 /* HomeViewController.swift in Sources */,
 				087F85D72A724A7300BC1973 /* TabBarController.swift in Sources */,
 				08922EE52A709F0200F770AD /* AppDelegate.swift in Sources */,
 				08922EE72A709F0300F770AD /* SceneDelegate.swift in Sources */,
 				087F85D12A71518A00BC1973 /* TwitterConstants.swift in Sources */,
+				08894B152A7512FC00EE3A80 /* ForgotPasswordViewController.swift in Sources */,
+				08894B132A750C2300EE3A80 /* TableViewCell.swift in Sources */,
 				08A0687B2A73FC5100E6D497 /* UserViewModel.swift in Sources */,
 				087F85DD2A724C4000BC1973 /* OrderViewController.swift in Sources */,
 			);
@@ -502,6 +526,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		08894B0A2A75066100EE3A80 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		08922F1C2A71005600F770AD /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -517,6 +549,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 087F85CD2A714CE600BC1973 /* XCRemoteSwiftPackageReference "Swifter" */;
 			productName = Swifter;
+		};
+		08894B0B2A75066100EE3A80 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08894B0A2A75066100EE3A80 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
 		};
 		08922F1D2A71005600F770AD /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;

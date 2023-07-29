@@ -157,6 +157,30 @@ class SignupViewController: UIViewController {
         return txtFLastName
     }()
     
+    let lblNumberPhone: UILabel = {
+        let lblNumberPhone = UILabel()
+        lblNumberPhone.translatesAutoresizingMaskIntoConstraints = false
+        lblNumberPhone.text = "Number Phone"
+        lblNumberPhone.textColor = UIColor(named: "txtDescColor")
+        lblNumberPhone.font = UIFont(name: "Inter-Regular", size: 13)
+        
+        return lblNumberPhone
+    }()
+    
+    let txtFNumberPhone: UITextField = {
+        let txtFNumberPhone = UITextField()
+        txtFNumberPhone.translatesAutoresizingMaskIntoConstraints = false
+        txtFNumberPhone.placeholder = "Number Phone"
+        txtFNumberPhone.borderStyle = .none
+        
+        let underlineLayer = CALayer()
+        underlineLayer.backgroundColor = UIColor(named: "underlineTxtF")?.cgColor
+        underlineLayer.frame = CGRect(x: 0, y: txtFNumberPhone.frame.height + 35, width: 335, height: 1)
+        txtFNumberPhone.layer.addSublayer(underlineLayer)
+        
+        return txtFNumberPhone
+    }()
+    
     let lblRememberMe: UILabel = {
         let lblRememberMe = UILabel()
         lblRememberMe.translatesAutoresizingMaskIntoConstraints = false
@@ -202,6 +226,8 @@ class SignupViewController: UIViewController {
         view.addSubview(txtFFirstName)
         view.addSubview(lblLastName)
         view.addSubview(txtFLastName)
+        view.addSubview(lblNumberPhone)
+        view.addSubview(txtFNumberPhone)
         view.addSubview(lblRememberMe)
         view.addSubview(switchRememberMe)
         view.addSubview(btnSignup)
@@ -219,7 +245,7 @@ class SignupViewController: UIViewController {
             txtTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 135),
             
             //Untuk label username
-            lblUsername.topAnchor.constraint(equalTo: txtTitle.bottomAnchor, constant: 100),
+            lblUsername.topAnchor.constraint(equalTo: txtTitle.bottomAnchor, constant: 30),
             lblUsername.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
             //Untuk Textfield Username
@@ -263,12 +289,21 @@ class SignupViewController: UIViewController {
             txtFLastName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             txtFLastName.widthAnchor.constraint(equalToConstant: 335),
             
+            //untuk Label Number Phone
+            lblNumberPhone.topAnchor.constraint(equalTo: txtFLastName.bottomAnchor, constant: 20),
+            lblNumberPhone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            //Untuk TextField Number Phone
+            txtFNumberPhone.topAnchor.constraint(equalTo: lblNumberPhone.bottomAnchor, constant: 15),
+            txtFNumberPhone.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            txtFNumberPhone.widthAnchor.constraint(equalToConstant: 335),
+            
             //Untuk Label Remember Me
-            lblRememberMe.topAnchor.constraint(equalTo: txtFLastName.bottomAnchor, constant: 52),
+            lblRememberMe.topAnchor.constraint(equalTo: txtFNumberPhone.bottomAnchor, constant: 52),
             lblRememberMe.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
             //Untuk Switch RememberMe
-            switchRememberMe.topAnchor.constraint(equalTo: txtFLastName.bottomAnchor, constant: 52),
+            switchRememberMe.topAnchor.constraint(equalTo: txtFNumberPhone.bottomAnchor, constant: 52),
             switchRememberMe.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             //Untuk View Bottom Ungu
@@ -280,10 +315,43 @@ class SignupViewController: UIViewController {
     }
     
     @objc func btnSignupTapped() {
-        let loginVC = LoginViewController()
-        navigationController?.pushViewController(loginVC, animated: true)
-        print("Button SignUp Tapped")
+        let username = txtFUsername.text ?? ""
+        let password = txtFPassword.text ?? ""
+        let email = txtFEmailAdress.text ?? ""
+        let firstName = txtFFirstName.text ?? ""
+        let lastName = txtFLastName.text ?? ""
+        let numberPhone = txtFNumberPhone.text ?? "" // Get the Number Phone input
+        
+        // Validate the input data (you can add more validations here if needed)
+        
+        // Call the createUser function with the additional "Number Phone" field
+        UserViewModel().createUser(username: username, password: password, email: email, firstName: firstName, lastName: lastName, phone: numberPhone) { success in
+            if success {
+                print("User created successfully!")
+                // Handle successful signup, e.g., show an alert, navigate to a new screen, etc.
+                self.saveUserDataToUserDefaults(username: username, email: email, phone: numberPhone)
+                
+            } else {
+                print("Failed to create user.")
+                // Handle signup failure, e.g., show an error message to the user.
+            }
+        }
     }
+    
+    func saveUserDataToUserDefaults(username: String, email: String, phone: String) {
+        
+        if let savedEmail = UserDefaults.standard.string(forKey: "email"), savedEmail == email {
+            print("Email / User already exists in UserDefaults.")
+            return // Don't save duplicate email
+        }
+        UserDefaults.standard.set(username, forKey: "username")
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(phone, forKey: "phone")
+        UserDefaults.standard.synchronize()
+        
+        print("User Data Saved To User Defaults: \(username) + , \(email), + \(phone)")
+    }
+    
     
     @objc func btnBackTapped() {
         navigationController?.popViewController(animated: true)

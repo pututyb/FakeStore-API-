@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import SideMenu
 
 class HomeViewController: UIViewController {
+    
+    let menu = SideMenuNavigationController(rootViewController: MenuListController())
     
     private lazy var btnBurgerMenu: UIButton = {
         let btnBurgerMenu = UIButton()
         btnBurgerMenu.translatesAutoresizingMaskIntoConstraints = false
         btnBurgerMenu.backgroundColor = UIColor(named: "btnBurgerMenu")
-        btnBurgerMenu.layer.cornerRadius = 18
+        btnBurgerMenu.layer.cornerRadius = 4
         btnBurgerMenu.tintColor = UIColor(named: "textPrimaryColor")
+        btnBurgerMenu.addTarget(self, action: #selector(sideMenuTapped), for: .touchUpInside)
         return btnBurgerMenu
     }()
     
@@ -22,13 +26,14 @@ class HomeViewController: UIViewController {
         let btnBagMenu = UIButton()
         btnBagMenu.translatesAutoresizingMaskIntoConstraints = false
         btnBagMenu.backgroundColor = UIColor(named: "btnBurgerMenu")
-        btnBagMenu.layer.cornerRadius = 18
+        btnBagMenu.layer.cornerRadius = 4
         btnBagMenu.tintColor = UIColor(named: "textPrimaryColor")
+        btnBagMenu.addTarget(self, action: #selector(infoButton), for: .touchUpInside)
         return btnBagMenu
     }()
     
     let lblHello: UILabel = {
-       let lblHello = UILabel()
+        let lblHello = UILabel()
         lblHello.translatesAutoresizingMaskIntoConstraints = false
         lblHello.text = "Hello"
         lblHello.textColor = UIColor(named: "textPrimaryColor")
@@ -37,7 +42,7 @@ class HomeViewController: UIViewController {
     }()
     
     let lblWelcome: UILabel = {
-       let lblWelcome = UILabel()
+        let lblWelcome = UILabel()
         lblWelcome.translatesAutoresizingMaskIntoConstraints = false
         lblWelcome.text = "Welcome to Laza."
         lblWelcome.textColor = UIColor(named: "textPrimaryColor")
@@ -51,7 +56,7 @@ class HomeViewController: UIViewController {
         searchBar.searchTextField.font = UIFont.systemFont(ofSize: 20) // Adjust the font size as needed
         searchBar.backgroundColor = UIColor(named: "appBackgroundColor")
         searchBar.placeholder = "Search.."
-        searchBar.searchBarStyle = .minimal        
+        searchBar.searchBarStyle = .minimal
         return searchBar
     }()
     
@@ -59,6 +64,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(named: "appBackgroundColor")
+        
+        
+        //Side MenuBar
+        menu.leftSide = true
         
         view.addSubview(btnBurgerMenu)
         view.addSubview(btnBagMenu)
@@ -68,12 +77,12 @@ class HomeViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            btnBurgerMenu.topAnchor.constraint(equalTo: view.topAnchor, constant: 55),
+            btnBurgerMenu.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
             btnBurgerMenu.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             btnBurgerMenu.widthAnchor.constraint(equalToConstant: 50),
             btnBurgerMenu.heightAnchor.constraint(equalToConstant: 50),
             
-            btnBagMenu.topAnchor.constraint(equalTo: view.topAnchor, constant: 55),
+            btnBagMenu.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
             btnBagMenu.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             btnBagMenu.widthAnchor.constraint(equalToConstant: 50),
             btnBagMenu.heightAnchor.constraint(equalToConstant: 50),
@@ -109,5 +118,22 @@ class HomeViewController: UIViewController {
             btnBurgerMenu.setImage(UIImage(named: "burgerDark"), for: .normal)
             btnBagMenu.setImage(UIImage(named: "bagDark"), for: .normal)
         }
+    }
+    
+    @objc private func infoButton() {
+        print("Info Logout Terbaru")
+        // Remove username and password from UserDefaults
+        UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "password")
+        UserDefaults.standard.synchronize()
+        
+        // Navigate back to the login screen
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
+    @objc private func sideMenuTapped() {
+        present(menu, animated: true)
+        print("This is sde menu")
     }
 }
