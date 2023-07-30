@@ -60,6 +60,37 @@ class HomeViewController: UIViewController {
         return searchBar
     }()
     
+    private lazy var btnMic: UIButton = {
+        let btnMic = UIButton()
+        btnMic.translatesAutoresizingMaskIntoConstraints = false
+        btnMic.backgroundColor = UIColor(named: "btnOnBoardingTapped")
+        btnMic.setImage(UIImage(named: "mic"), for: .normal)
+        btnMic.layer.cornerRadius = 6
+        btnMic.tintColor = UIColor(named: "textPrimaryColor")
+        btnMic.addTarget(self, action: #selector(btnMicTapepd), for: .touchUpInside)
+        return btnMic
+    }()
+    
+    let lblChooseBrand: UILabel = {
+        let lblChooseBrand = UILabel()
+        lblChooseBrand.translatesAutoresizingMaskIntoConstraints = false
+        lblChooseBrand.text = "Choose Brand"
+        lblChooseBrand.textColor = UIColor(named: "textPrimaryColor")
+        lblChooseBrand.font = UIFont(name: "Inter-Bold", size: 17)
+        return lblChooseBrand
+    }()
+    
+    private lazy var btnViewAll1: UIButton = {
+       let btnViewAll1 = UIButton()
+        btnViewAll1.translatesAutoresizingMaskIntoConstraints = false
+        btnViewAll1.setTitle("View All", for: .normal)
+        btnViewAll1.setTitleColor(UIColor(named: "txtDescColor"), for: .normal)
+        btnViewAll1.addTarget(self, action: #selector(btnViewAll1Tapped), for: .touchUpInside)
+        
+        return btnViewAll1
+        
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -75,6 +106,9 @@ class HomeViewController: UIViewController {
         view.addSubview(lblHello)
         view.addSubview(lblWelcome)
         view.addSubview(searchBar)
+        view.addSubview(btnMic)
+        view.addSubview(lblChooseBrand)
+        view.addSubview(btnViewAll1)
         
         
         NSLayoutConstraint.activate([
@@ -98,6 +132,17 @@ class HomeViewController: UIViewController {
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
             searchBar.heightAnchor.constraint(equalToConstant: 50),
+            
+            btnMic.topAnchor.constraint(equalTo: lblWelcome.bottomAnchor, constant: 20),
+            btnMic.leadingAnchor.constraint(equalTo: searchBar.trailingAnchor, constant: 10),
+            btnMic.widthAnchor.constraint(equalToConstant: 50),
+            btnMic.heightAnchor.constraint(equalToConstant: 50),
+            
+            lblChooseBrand.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 20),
+            lblChooseBrand.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            btnViewAll1.topAnchor.constraint(equalTo: btnMic.bottomAnchor, constant: 20),
+            btnViewAll1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
         
         updateBurgerButtonImage()
@@ -138,5 +183,13 @@ class HomeViewController: UIViewController {
     @objc private func sideMenuTapped() {
         present(menu, animated: true)
         print("This is sde menu")
+    }
+    
+    @objc private func btnMicTapepd() {
+        print("Button Mic Tapped")
+    }
+    
+    @objc private func btnViewAll1Tapped() {
+        print("btnViewAll1 Tapped")
     }
 }

@@ -277,6 +277,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtFUsername {
+            // Check if the username is not empty and display the appropriate icon
+            let usernameIconName = textField.text?.isEmpty == false ? "checkmark.circle.fill" : nil
+            txtFUsername.addRightIcon(image: UIImage(named: "check")!)
+        } else if textField == txtFPassword {
+            // Check if the password is not empty and display the appropriate icon
+            let passwordIconName = textField.text?.isEmpty == false ? "checkmark.circle.fill" : nil
+            txtFPassword.addRightIcon(image: UIImage(named: "check")!)
+        }
+    }
+    
     @objc func btnBackTapped() {
         navigationController?.popViewController(animated: true)
         print("btnBack Tapped")
@@ -323,5 +335,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+}
+
+extension UITextField {
+    func addRightIcon(image: UIImage) {
+        let iconView = UIImageView(image: image)
+        iconView.contentMode = .scaleAspectFit
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(iconView)
+        
+        NSLayoutConstraint.activate([
+            iconView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            iconView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5),
+            iconView.widthAnchor.constraint(equalToConstant: 20),
+            iconView.heightAnchor.constraint(equalToConstant: 20)
+        ])
     }
 }
